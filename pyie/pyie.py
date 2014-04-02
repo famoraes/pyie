@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import .config
+import config, re
 
 class ValideStateInscription(object):
 
@@ -8,10 +8,10 @@ class ValideStateInscription(object):
         self.state = kwargs['state']
         self.state_inscription = kwargs['state_inscription']
 
-        self.state_parameters = config.STATES_CONFIGS
+        self.states_configs = config.STATES_CONFIGS
         self.states = config.STATES
 
-    def validate_state_inscription(self):
+    def validate(self):
         if (self.state and not self.state_inscription or
             not self.state and not self.state_inscription or
             self.state_inscription.upper() == config.FREE_TERM):
