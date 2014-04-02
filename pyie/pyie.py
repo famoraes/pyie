@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pyie import config
+import .config
 
 class ValideStateInscription(object):
 
